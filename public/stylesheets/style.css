@@ -10,3 +10,8 @@
 li {
   list-style: none;
 }
+
+body{
+  background-color: aqua;
+  text-align: center;
+}

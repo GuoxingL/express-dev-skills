@@ -1,5 +1,5 @@
 const skills = [
-  {id: 125223, skill: 'CSS', done: false},
+  {id: 125223, skill: 'CSS', done: true},
   {id: 127904, skill: 'HTML', done: false},
   {id: 139608, skill: 'JS', done: false}
 ];
@@ -8,7 +8,8 @@ module.exports = {
   getAll,
   getOne,
   create,
-  deleteOne
+  deleteOne,
+  update
 };
 
 function getOne(id) {
@@ -33,4 +34,10 @@ function deleteOne(id) {
   
   const idx = skills.findIndex(skill => skill.id === id);
   skills.splice(idx, 1);
+}
+
+function update(id, updatedSkill) {
+  id = parseInt(id);
+  const skill = skills.find(skill => skill.id === id);
+  Object.assign(skill, updatedSkill);
 }
